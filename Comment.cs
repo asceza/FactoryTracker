@@ -23,11 +23,17 @@ namespace FactoryTracker
         /// </summary>
         public DateTime DateTime { get; set; }
 
-        public Comment(uint id, string text, DateTime dateTime)
+        /// <summary>
+        /// ID комментария
+        /// </summary>
+        private static uint commentID = 0;
+
+        public Comment(string text)
         {
-            ID = id;
+            commentID++;
+            ID = commentID;
             Text = text;
-            DateTime = dateTime;
+            DateTime = DateTime.Now;
         }
     }
 }

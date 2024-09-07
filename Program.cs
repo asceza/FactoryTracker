@@ -36,10 +36,28 @@
                                     25,
                                     DateTime.Now.AddDays(4),
                                     ProductStatus.ComponentsAssembly
-                                    ); 
+                                    );
             #endregion
 
 
+            #region /*-----------------Тестируем сотрудника----------------*/
+            Employee employee_1 = new Employee(1,
+                                       "Антон Антонович Антонов",
+                                       "Слесарь электромонтажник");
+
+            #endregion
+
+
+            #region /*-----------------Тестируем этап производства---------*/
+            ProductStage productStage = new ProductStage(product_1,
+                                                 employee_1,
+                                                 CraftOperation.BlanksAssembly,
+                                                 ProductStatus.ComponentsAssembly,
+                                                 DateTime.Now,
+                                                 4,
+                                                 new Comment("Единственный комментарий для этапа производства")
+                                                ); 
+            #endregion
 
 
 

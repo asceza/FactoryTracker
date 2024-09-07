@@ -9,7 +9,7 @@ namespace FactoryTracker
     /// <summary>
     /// Роли пользователя
     /// </summary>
-    public enum UserRole
+    public enum UserRole : byte
     {
         None,
         Brigadier,  // бригадир

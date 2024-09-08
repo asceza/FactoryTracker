@@ -22,5 +22,13 @@ namespace FactoryTracker
             Role = role;
         }
 
+        public override string ToString()
+        {
+            return $"-----------------User-------------------\n" +
+                   $"      ID - {this.ID}\n" +
+                   $"FullName - {this.FullName}\n" +
+                   $"    Role - {this.Role}\n" +
+                   $"----------------------------------------\n";
+        }
     }
 }

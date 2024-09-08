@@ -1,15 +1,23 @@
-﻿namespace FactoryTracker
+﻿// TODO добавить сервисы консольного ввода/вывода - Input, Output
+// TODO добавить провайдеры обработки для Input, Output
+
+using FactoryTracker.Services;
+
+namespace FactoryTracker
 {
     public class Program
     {
         static void Main(string[] args)
         {
+            ConsoleInputService consoleInputService = new ConsoleInputService();
+            ConsoleOutputService consoleOutputService = new ConsoleOutputService();
 
             #region /*-----------------Тестируем юзера---------------------*/
             User user_1 = new User(1,
                            "Иванов Иван Иванович",
                            UserRole.Brigadier
                            );
+            consoleOutputService.Print(user_1.ToString());
             #endregion
 
 
@@ -24,7 +32,7 @@
 
             foreach (var c in productType_1.Comments)
             {
-                Console.WriteLine(c.Text);
+                consoleOutputService.Print(c.Text);
             }
             #endregion
 

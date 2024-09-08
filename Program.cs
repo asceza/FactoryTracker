@@ -1,5 +1,6 @@
 ﻿// TODO добавить сервисы консольного ввода/вывода - Input, Output
 // TODO добавить провайдеры обработки для Input, Output
+// TODO организовать хранение ключа в переменной среды -> Environment.GetEnvironmentVariable("botKey")
 
 using FactoryTracker.Services;
 

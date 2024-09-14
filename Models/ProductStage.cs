@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FactoryTracker
+namespace FactoryTracker.Models
 {
     /// <summary>
     /// "Этап производства (запись в БД)
@@ -13,19 +13,19 @@ namespace FactoryTracker
     {
         public uint ID { get; set; }
         public Product Product { get; set; }
-        public Employee Employee { get; set; }
+        public User User { get; set; }
         public CraftOperation CraftOperation { get; set; }
         public ProductStatus ProductStatus { get; set; }
         public DateTime DateTime { get; set; }
         public uint ProductionDurationInHour { get; set; }
-        
+
         /// <summary>
         /// Одиночный комментарий
         /// </summary>
         public Comment Comment { get; set; }
 
         public ProductStage(Product product,
-                            Employee employee,
+                            User user,
                             CraftOperation craftOperation,
                             ProductStatus productStatus,
                             DateTime dateTime,
@@ -33,7 +33,7 @@ namespace FactoryTracker
                             Comment comment)
         {
             Product = product;
-            Employee = employee;
+            User = user;
             CraftOperation = craftOperation;
             ProductStatus = productStatus;
             DateTime = dateTime;

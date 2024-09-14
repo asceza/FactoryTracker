@@ -2,6 +2,7 @@
 // TODO добавить провайдеры обработки для Input, Output
 // TODO организовать хранение ключа в переменной среды -> Environment.GetEnvironmentVariable("botKey")
 
+using FactoryTracker.Models;
 using FactoryTracker.Services;
 
 namespace FactoryTracker
@@ -13,16 +14,16 @@ namespace FactoryTracker
             ConsoleInputService consoleInputService = new ConsoleInputService();
             ConsoleOutputService consoleOutputService = new ConsoleOutputService();
 
-            #region /*-----------------Тестируем юзера---------------------*/
+            /*
             User user_1 = new User(1,
                            "Иванов Иван Иванович", // делим на сущности
                            UserRole.Brigadier
                            );
             consoleOutputService.Print(user_1.ToString());
-            #endregion
+            */
 
 
-            #region /*-----------------Тестируем тип продукта--------------*/
+            /*-----------------Тестируем тип продукта--------------*/
             ProductType productType_1 = new ProductType(1,
                                                 "Изделие_1",
                                                 90
@@ -35,10 +36,9 @@ namespace FactoryTracker
             {
                 consoleOutputService.Print(c.Text);
             }
-            #endregion
 
 
-            #region /*-----------------Тестируем продукт-------------------*/
+            /*-----------------Тестируем продукт-------------------*/
             Product product_1 = new Product(1,
                                     productType_1,
                                     "2.050/24",
@@ -46,18 +46,12 @@ namespace FactoryTracker
                                     DateTime.Now.AddDays(4),
                                     ProductStatus.ComponentsAssembly
                                     );
-            #endregion
 
 
-            #region /*-----------------Тестируем сотрудника----------------*/
-            Employee employee_1 = new Employee(1,
-                                       "Антон Антонович Антонов",
-                                       "Слесарь электромонтажник");
-
-            #endregion
 
 
-            #region /*-----------------Тестируем этап производства---------*/
+
+            /*-----------------Тестируем этап производства---------*/
             ProductStage productStage = new ProductStage(product_1,
                                                  employee_1,
                                                  CraftOperation.BlanksAssembly,
@@ -66,7 +60,7 @@ namespace FactoryTracker
                                                  4,
                                                  new Comment("Единственный комментарий для этапа производства")
                                                 ); 
-            #endregion
+
 
 
 

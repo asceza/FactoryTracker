@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FactoryTracker
+namespace FactoryTracker.Models
 {
     /// <summary>
     /// Тип изделия
@@ -14,7 +14,7 @@ namespace FactoryTracker
         public uint ID { get; set; }
         public string Title { get; set; }
         public uint StandartDurationInHour { get; set; }
-        public List <Comment> Comments { get; set; }
+        public List<Comment> Comments { get; set; }
 
 
 
@@ -32,7 +32,7 @@ namespace FactoryTracker
         /// <param name="text">Текст комментария</param>
         public void AddComment(string text)
         {
-            if(!String.IsNullOrEmpty(text)) // проверка на пустую строку
+            if (!string.IsNullOrEmpty(text)) // проверка на пустую строку
                 Comments.Add(new Comment(text));
             return;
         }

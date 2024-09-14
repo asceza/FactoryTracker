@@ -1,5 +1,4 @@
-﻿
-namespace FactoryTracker
+﻿namespace FactoryTracker.Models
 {
     internal class ProductStageComment : Comment
     {

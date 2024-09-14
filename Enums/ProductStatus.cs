@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FactoryTracker.Enums
+﻿namespace FactoryTracker.Enums
 {
+    /// <summary>
+    /// Статус изделия
+    /// </summary>
     public enum ProductStatus : byte
     {
         Unknown,

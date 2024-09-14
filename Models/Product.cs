@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FactoryTracker.Enums;
+﻿using FactoryTracker.Enums;
 
 namespace FactoryTracker.Models
 {
@@ -12,7 +7,14 @@ namespace FactoryTracker.Models
     /// </summary>
     public class Product
     {
+        /// <summary>
+        /// ID изделия
+        /// </summary>
         public uint ID { get; set; }
+
+        /// <summary>
+        /// Тип изделия
+        /// </summary>
         public ProductType ProductType { get; set; }
 
         /// <summary>
@@ -25,12 +27,11 @@ namespace FactoryTracker.Models
         /// </summary>
         public uint KitNumber { get; set; }
 
-
-        public DateTime plannedReleaseDate;
-
         /// <summary>
         /// Плановая дата выпуска изделия
         /// </summary>
+        public DateTime plannedReleaseDate;
+
         public DateTime PlannedReleaseDate
         {
             get { return plannedReleaseDate; }
@@ -40,7 +41,7 @@ namespace FactoryTracker.Models
                 {
                     plannedReleaseDate = value;
                 }
-                return; // TODO сообщение пользователю
+                return;
             }
         }
 
@@ -50,26 +51,16 @@ namespace FactoryTracker.Models
         /// </summary>
         public uint ActualDurationInHour { get; set; }
 
+        /// <summary>
+        /// Статус изделия
+        /// </summary>
         public ProductStatus ProductStatus { get; set; }
 
+        /// <summary>
+        /// Список комментариев по изделию
+        /// </summary>
         public List<Comment> Comments { get; set; }
 
-        public Product(uint id,
-                       ProductType productType,
-                       string number, uint kitNumber,
-                       DateTime plannedReleaseDate,
-                       ProductStatus productStatus,
-                       uint actualDurationInHour = 0)
-        {
-            ID = id;
-            ProductType = productType;
-            Number = number;
-            KitNumber = kitNumber;
-            PlannedReleaseDate = plannedReleaseDate;
-            ProductStatus = productStatus;
-            ActualDurationInHour = actualDurationInHour;
-            Comments = new List<Comment>();
-        }
 
     }
 }

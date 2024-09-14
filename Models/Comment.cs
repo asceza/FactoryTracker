@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace FactoryTracker.Models
 {
     /// <summary>
@@ -11,7 +6,14 @@ namespace FactoryTracker.Models
     /// </summary>
     public class Comment
     {
+        /// <summary>
+        /// ID комментария
+        /// </summary>
         public uint ID { get; set; }
+
+        /// <summary>
+        /// ID автора комментария
+        /// </summary>
         public uint AutorUserID { get; set; }
 
         /// <summary>

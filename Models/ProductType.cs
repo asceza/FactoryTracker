@@ -32,8 +32,10 @@ namespace FactoryTracker.Models
         /// <param name="text">Текст комментария</param>
         public void AddComment(string text)
         {
-            if (!string.IsNullOrEmpty(text)) // проверка на пустую строку
+            if (!string.IsNullOrEmpty(text))
+            {
                 Comments.Add(new Comment(text));
+            }
             return;
         }
     }

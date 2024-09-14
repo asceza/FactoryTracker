@@ -2,6 +2,9 @@
 {
     internal class ProductComment : Comment
     {
+        /// <summary>
+        /// ID изделия
+        /// </summary>
         public uint ProductID { get; set; }
 
         /// <summary>

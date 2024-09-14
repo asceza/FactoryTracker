@@ -18,16 +18,7 @@ namespace FactoryTracker.Models
         public string Secondname { get; set; }
 
         public JobPosition JobPosition { get; set; }
-        public UserRole? Role { get; set; }
+        public UserRole Role { get; set; }
 
-        public User(uint id, string surname, string name, string secondname, JobPosition jobPosition, UserRole? role)
-        {
-            ID = id;
-            Surname = surname;
-            Name = name;
-            Secondname = secondname;
-            JobPosition = jobPosition;
-            Role = role;
-        }
     }
 }

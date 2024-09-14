@@ -2,6 +2,9 @@
 {
     internal class ProductTypeComment : Comment
     {
+        /// <summary>
+        /// ID типа изделия
+        /// </summary>
         public uint ProductTypeID { get; set; }
 
         /// <summary>

@@ -11,6 +11,7 @@ namespace FactoryTracker
     /// </summary>
     public class ProductStage
     {
+        public uint ID { get; set; }
         public Product Product { get; set; }
         public Employee Employee { get; set; }
         public CraftOperation CraftOperation { get; set; }

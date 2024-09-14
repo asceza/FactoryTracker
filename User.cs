@@ -12,7 +12,7 @@ namespace FactoryTracker
     public class User
     {
         public uint ID { get; set; }
-        public string? FullName { get; set; }
+        public string FullName { get; set; }
         public UserRole? Role { get; set; }
 
         public User(uint id, string? fullName, UserRole? role)

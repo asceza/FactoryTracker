@@ -15,7 +15,7 @@ namespace FactoryTracker
 
             #region /*-----------------Тестируем юзера---------------------*/
             User user_1 = new User(1,
-                           "Иванов Иван Иванович",
+                           "Иванов Иван Иванович", // делим на сущности
                            UserRole.Brigadier
                            );
             consoleOutputService.Print(user_1.ToString());

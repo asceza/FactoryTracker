@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FactoryTracker.Enums;
 
 namespace FactoryTracker.Models
 {
@@ -11,16 +12,17 @@ namespace FactoryTracker.Models
     /// </summary>
     public class ProductStage
     {
-        public uint ID { get; set; }
+        public uint WorkerID { get; set; }
         public Product Product { get; set; }
         public User User { get; set; }
         public CraftOperation CraftOperation { get; set; }
         public ProductStatus ProductStatus { get; set; }
         public DateTime DateTime { get; set; }
         public uint ProductionDurationInHour { get; set; }
+        public uint AutorUserID { get; set; }
 
         /// <summary>
-        /// Одиночный комментарий
+        /// Одиночный комментарий?
         /// </summary>
         public Comment Comment { get; set; }
 

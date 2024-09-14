@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FactoryTracker
+namespace FactoryTracker.Enums
 {
     public enum ProductStatus : byte
     {

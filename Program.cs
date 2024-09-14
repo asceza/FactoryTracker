@@ -1,7 +1,7 @@
-﻿// TODO добавить сервисы консольного ввода/вывода - Input, Output
-// TODO добавить провайдеры обработки для Input, Output
-// TODO организовать хранение ключа в переменной среды -> Environment.GetEnvironmentVariable("botKey")
+﻿
 
+
+using FactoryTracker.Enums;
 using FactoryTracker.Models;
 using FactoryTracker.Services;
 
@@ -14,13 +14,16 @@ namespace FactoryTracker
             ConsoleInputService consoleInputService = new ConsoleInputService();
             ConsoleOutputService consoleOutputService = new ConsoleOutputService();
 
-            /*
+            
             User user_1 = new User(1,
-                           "Иванов Иван Иванович", // делим на сущности
-                           UserRole.Brigadier
-                           );
-            consoleOutputService.Print(user_1.ToString());
-            */
+                                   "Иванов",
+                                   "Иван",
+                                   "Иванович",
+                                   JobPosition.electrician_fitter_4th_category,
+                                   UserRole.Brigadier
+                                   );
+            consoleOutputService.Print(user_1.Name);
+            
 
 
             /*-----------------Тестируем тип продукта--------------*/
@@ -53,15 +56,13 @@ namespace FactoryTracker
 
             /*-----------------Тестируем этап производства---------*/
             ProductStage productStage = new ProductStage(product_1,
-                                                 employee_1,
+                                                 user_1,
                                                  CraftOperation.BlanksAssembly,
                                                  ProductStatus.ComponentsAssembly,
                                                  DateTime.Now,
                                                  4,
                                                  new Comment("Единственный комментарий для этапа производства")
-                                                ); 
-
-
+                                                );
 
 
             Console.ReadLine();

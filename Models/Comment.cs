@@ -12,6 +12,7 @@ namespace FactoryTracker.Models
     public class Comment
     {
         public uint ID { get; set; }
+        public uint AutorUserID { get; set; }
 
         /// <summary>
         /// Текст комментария

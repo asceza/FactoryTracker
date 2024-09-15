@@ -11,5 +11,6 @@
         Director,   // директор
         Controller, // контроллер
         Logistician,// логист
+        Worker      // рабочий
     }
 }

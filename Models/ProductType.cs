@@ -14,7 +14,7 @@ namespace FactoryTracker.Models
         public uint ID { get; set; }
         public string Title { get; set; }
         public uint StandartDurationInHour { get; set; }
-        public List<Comment> Comments { get; set; }
+        public List<ProductTypeComment> ProductTypeComments { get; set; }
 
 
 
@@ -23,18 +23,18 @@ namespace FactoryTracker.Models
             ID = id;
             Title = title;
             StandartDurationInHour = standartDurationInHour;
-            Comments = new List<Comment>();
+            ProductTypeComments = new List<ProductTypeComment>();
         }
 
         /// <summary>
         /// Добавление комментария к типу изделия
         /// </summary>
         /// <param name="text">Текст комментария</param>
-        public void AddComment(string text)
+        public void AddComment(string text, uint productTypeID, uint userInitiatorID)
         {
             if (!string.IsNullOrEmpty(text))
             {
-                Comments.Add(new Comment(text));
+                ProductTypeComments.Add(new ProductTypeComment(text, productTypeID, userInitiatorID));
             }
             return;
         }

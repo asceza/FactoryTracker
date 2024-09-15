@@ -8,7 +8,7 @@ namespace FactoryTracker.Models
     public class Product
     {
         /// <summary>
-        /// ID изделия
+        /// ID изделия♥
         /// </summary>
         public uint ID { get; set; }
 

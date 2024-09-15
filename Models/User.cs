@@ -16,9 +16,8 @@ namespace FactoryTracker.Models
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Secondname { get; set; }
-
         public JobPosition JobPosition { get; set; }
         public UserRole Role { get; set; }
-
+       
     }
 }

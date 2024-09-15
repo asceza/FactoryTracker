@@ -1,6 +1,6 @@
 ﻿namespace FactoryTracker.Models
 {
-    internal class ProductTypeComment : Comment
+    public class ProductTypeComment : Comment
     {
         /// <summary>
         /// ID типа изделия

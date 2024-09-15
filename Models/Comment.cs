@@ -4,7 +4,7 @@ namespace FactoryTracker.Models
     /// <summary>
     /// Комментарий
     /// </summary>
-    public class Comment
+    public abstract class Comment
     {
         /// <summary>
         /// ID комментария

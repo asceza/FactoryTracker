@@ -13,12 +13,8 @@ namespace FactoryTracker
             ConsoleOutputService consoleOutputService = new ConsoleOutputService();
 
 
-
             User FirstTestUser = new User();
             FirstTestUser.Surname = "Иванов";
-
-
-
 
 
             UserRepository userRepository = new UserRepository();

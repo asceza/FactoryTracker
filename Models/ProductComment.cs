@@ -5,14 +5,14 @@
         /// <summary>
         /// ID изделия
         /// </summary>
-        public uint ProductID { get; set; }
+        public int ProductID { get; set; }
 
         /// <summary>
         /// ID инициатора комментария
         /// </summary>
-        public uint? UserInitiatorID { get; set; }
+        public int? UserInitiatorID { get; set; }
 
-        public ProductComment(string text, uint productID, uint userInitiatorID) : base(text)
+        public ProductComment(string text, int productID, int userInitiatorID) : base(text)
         {
             ProductID = productID;
             UserInitiatorID = userInitiatorID;

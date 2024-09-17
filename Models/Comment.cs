@@ -9,12 +9,12 @@ namespace FactoryTracker.Models
         /// <summary>
         /// ID комментария
         /// </summary>
-        public uint ID { get; set; }
+        public int ID { get; set; }
 
         /// <summary>
         /// ID автора комментария
         /// </summary>
-        public uint AuthorUserID { get; set; }
+        public int AuthorUserID { get; set; }
 
         /// <summary>
         /// Текст комментария

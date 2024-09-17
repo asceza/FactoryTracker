@@ -10,7 +10,7 @@ namespace FactoryTracker.Models
         /// <summary>
         /// ID изделия♥
         /// </summary>
-        public uint ID { get; set; }
+        public int ID { get; set; }
 
         /// <summary>
         /// Тип изделия
@@ -25,7 +25,7 @@ namespace FactoryTracker.Models
         /// <summary>
         /// Номер комплекта
         /// </summary>
-        public uint KitNumber { get; set; }
+        public int KitNumber { get; set; }
 
         /// <summary>
         /// Плановая дата выпуска изделия

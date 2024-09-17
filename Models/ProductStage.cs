@@ -10,17 +10,17 @@ namespace FactoryTracker.Models
         /// <summary>
         /// ID этапа изделия
         /// </summary>
-        public uint ID { get; set; }
+        public int ID { get; set; }
 
         /// <summary>
         /// Изделие с которым выполняется производственная операция
         /// </summary>
-        public uint ProductID { get; set; }
+        public int ProductID { get; set; }
 
         /// <summary>
         /// ID исполнителя, который выполняет производственную операцию
         /// </summary>
-        public uint WorkerID { get; set; }
+        public int WorkerID { get; set; }
 
         public CraftOperation CraftOperation { get; set; }
         public ProductStatus ProductStatus { get; set; }
@@ -30,7 +30,7 @@ namespace FactoryTracker.Models
         /// <summary>
         /// ID автора данной записи
         /// </summary>
-        public uint AuthorUserID { get; set; }
+        public int AuthorUserID { get; set; }
 
         public List<ProductStageComment> ProductStageComments { get; set; }
 

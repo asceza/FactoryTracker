@@ -6,8 +6,8 @@
         /// <summary>
         /// ID инициатора комментария
         /// </summary>
-        public uint? UserInitiatorID { get; set; }
-        public ProductTypeComment(string text, uint userInitiatorID) : base(text)
+        public int? UserInitiatorID { get; set; }
+        public ProductTypeComment(string text, int userInitiatorID) : base(text)
         {
             UserInitiatorID = userInitiatorID;
         }

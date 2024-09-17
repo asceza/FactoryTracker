@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using FactoryTracker.Enums;
 
 namespace FactoryTracker.Models
@@ -12,7 +8,7 @@ namespace FactoryTracker.Models
     /// </summary>
     public class User
     {
-        public uint ID { get; set; }
+        public int ID { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }

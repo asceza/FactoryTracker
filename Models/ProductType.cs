@@ -16,8 +16,6 @@ namespace FactoryTracker.Models
         public uint StandartDurationInHour { get; set; }
         public List<ProductTypeComment> ProductTypeComments { get; set; }
 
-
-
         public ProductType(uint id, string title, uint standartDurationInHour)
         {
             ID = id;

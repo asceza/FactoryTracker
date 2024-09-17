@@ -5,9 +5,9 @@ namespace FactoryTracker.Repositories
 {
     public class UserRepository
     {
-        private Dictionary<long, User> _users;
+        private readonly Dictionary<long, User> _users;
 
-        private static long _userId = 0;
+        private long _userId = 0;
 
         private long IncrementUserId()
         {

@@ -14,7 +14,7 @@ namespace FactoryTracker.Models
         /// <summary>
         /// ID автора комментария
         /// </summary>
-        public uint AutorUserID { get; set; }
+        public uint AuthorUserID { get; set; }
 
         /// <summary>
         /// Текст комментария
@@ -29,9 +29,8 @@ namespace FactoryTracker.Models
 
         public Comment(string text)
         {
-            // ?ID
             Text = text;
-            DateTime = DateTime.Now;
+            DateTime = DateTime.UtcNow;
         }
     }
 }

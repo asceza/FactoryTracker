@@ -3,7 +3,7 @@
 namespace FactoryTracker.Models
 {
     /// <summary>
-    /// "Этап производства (запись в БД)
+    /// "Этап изделия (запись в БД)
     /// </summary>
     public class ProductStage
     {
@@ -30,7 +30,9 @@ namespace FactoryTracker.Models
         /// <summary>
         /// ID автора данной записи
         /// </summary>
-        public uint AutorUserID { get; set; }
+        public uint AuthorUserID { get; set; }
+
+        public List<ProductStageComment> ProductStageComments { get; set; }
 
     }
 }

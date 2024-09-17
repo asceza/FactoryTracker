@@ -14,15 +14,15 @@ namespace FactoryTracker
 
 
 
-            User user1 = new User();
-            user1.Surname = "Иванов";
+            User FirstTestUser = new User();
+            FirstTestUser.Surname = "Иванов";
 
 
 
 
 
             UserRepository userRepository = new UserRepository();
-            userRepository.AddUser(user1);
+            userRepository.AddUser(FirstTestUser);
 
             User findUser = userRepository.GetUser(1);
             Console.WriteLine(findUser.Surname);

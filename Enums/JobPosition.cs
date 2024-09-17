@@ -6,15 +6,15 @@
     public enum JobPosition : byte
     {
         None,
-        fitter_2nd_category,
-        fitter_3rd_category,
-        fitter_4th_category,
-        fitter_5th_category,
-        fitter_6th_category,
-        electrician_fitter_2nd_category,
-        electrician_fitter_3rd_category,
-        electrician_fitter_4th_category,
-        electrician_fitter_5th_category,
-        electrician_fitter_6th_category,
+        FitterCategory2,
+        FitterCategory3,
+        FitterCategory4,
+        FitterCategory5,
+        FitterCategory6,
+        ElectricianFitterCategory2,
+        ElectricianFitterCategory3,
+        ElectricianFitterCategory4,
+        ElectricianFitterCategory5,
+        ElectricianFitterCategory6,
     }
 }

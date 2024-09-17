@@ -47,7 +47,6 @@ namespace FactoryTracker.Models
 
         /// <summary>
         /// Фактическая длительность производства
-        /// ?нужно вводить это свойсво или счить по данным из БД?
         /// </summary>
         public uint ActualDurationInHour { get; set; }
 
@@ -59,7 +58,7 @@ namespace FactoryTracker.Models
         /// <summary>
         /// Список комментариев по изделию
         /// </summary>
-        public List<Comment> Comments { get; set; }
+        public List<ProductComment> ProductComments { get; set; }
 
 
     }

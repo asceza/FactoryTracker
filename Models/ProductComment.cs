@@ -1,6 +1,6 @@
 ﻿namespace FactoryTracker.Models
 {
-    internal class ProductComment : Comment
+    public class ProductComment : Comment
     {
         /// <summary>
         /// ID изделия
@@ -10,7 +10,7 @@
         /// <summary>
         /// ID инициатора комментария
         /// </summary>
-        public uint UserInitiatorID { get; set; }
+        public uint? UserInitiatorID { get; set; }
 
         public ProductComment(string text, uint productID, uint userInitiatorID) : base(text)
         {

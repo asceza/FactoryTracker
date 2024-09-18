@@ -10,20 +10,25 @@ namespace FactoryTracker.Repositories
 
         public UserRepository()
         {
-            _users = new Dictionary<int, User>() { { 0, new User() } }; 
+            _users = new Dictionary<int, User>();
         }
 
 
         private int IncrementUserId()
         {
-            return _users.MaxBy(k => k.Key).Key + 1;
-            //return _users.Keys.Max() + 1;
-
+            if (_users.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return _users.MaxBy(k => k.Key).Key + 1;
+                //return _users.Keys.Max() + 1;
+            }
         }
 
         public void AddUser(User user)
         {
-            // здесь масло масленное???
             int id = IncrementUserId();
             user.ID = id;
             _users.Add(id, user);

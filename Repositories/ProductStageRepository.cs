@@ -37,8 +37,15 @@ namespace FactoryTracker.Repositories
 
         public ProductStage GetProductStage(int productStageId)
         {
-            KeyValuePair<int, ProductStage> foundItem = _productStages.FirstOrDefault(item => item.Key == productStageId);
-            return foundItem.Value;
+            try
+            {
+                KeyValuePair<int, ProductStage> foundItem = _productStages.First(item => item.Key == productStageId);
+                return foundItem.Value;
+            }
+            catch (Exception)
+            {
+                throw new Exception($"В словаре _productStages нет значения с ключом {productStageId}");
+            }
         }
     }
 }

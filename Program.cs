@@ -25,7 +25,7 @@ namespace FactoryTracker
             userRepository.AddUser(testUser2);
 
             Console.WriteLine(userRepository.GetUser(1).ToString());
-            Console.WriteLine(userRepository.GetUser(2).ToString());
+            Console.WriteLine(userRepository.GetUser(8).ToString());
 
 
             Console.ReadLine();

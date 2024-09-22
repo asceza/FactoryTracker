@@ -33,8 +33,15 @@ namespace FactoryTracker.Repositories
 
         public ProductType GetProductType(int productTypeId)
         {
-            KeyValuePair<int, ProductType> foundItem = _productTypes.FirstOrDefault(item => item.Key == productTypeId);
-            return foundItem.Value;
+            try
+            {
+                KeyValuePair<int, ProductType> foundItem = _productTypes.First(item => item.Key == productTypeId);
+                return foundItem.Value;
+            }
+            catch (Exception)
+            {
+                throw new Exception($"В словаре _productTypes нет значения с ключом {productTypeId}");
+            }
         }
     }
 }

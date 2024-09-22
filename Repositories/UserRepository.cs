@@ -36,8 +36,15 @@ namespace FactoryTracker.Repositories
 
         public User GetUser(int userId)
         {
-            KeyValuePair<int, User> foundItem = _users.FirstOrDefault(item => item.Key == userId);
-            return foundItem.Value;
+            try
+            {
+                KeyValuePair<int, User> foundItem = _users.First(item => item.Key == userId);
+                return foundItem.Value;
+            }
+            catch (Exception)
+            {
+                throw new Exception($"В словаре _users нет значения с ключом {userId}");
+            }
         }
     }
 }

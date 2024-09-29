@@ -1,7 +1,9 @@
-﻿using FactoryTracker.Enums;
+﻿using FactoryTracker.BL;
+using FactoryTracker.Enums;
 using FactoryTracker.Models;
 using FactoryTracker.Repositories;
 using FactoryTracker.Services;
+using FactoryTracker.UI;
 
 namespace FactoryTracker
 {
@@ -9,23 +11,14 @@ namespace FactoryTracker
     {
         static void Main(string[] args)
         {
-            ConsoleInputService consoleInputService = new ConsoleInputService();
-            ConsoleOutputService consoleOutputService = new ConsoleOutputService();
+            /*
+             * 1. Запрашиваем у UI данные по изделию
+             * 2. Добавляем в ProductManager изделие
+             * 3. Опционально плучение всех продуктов
+             * */
 
-
-            User testUser1 = new User();
-            testUser1.Surname = "Иванов";
-
-            User testUser2 = new User();
-            testUser2.Surname = "Петров";
-
-
-            UserRepository userRepository = new UserRepository();
-            userRepository.AddUser(testUser1);
-            userRepository.AddUser(testUser2);
-
-            Console.WriteLine(userRepository.GetUser(1).ToString());
-            Console.WriteLine(userRepository.GetUser(8).ToString());
+            BL.FactoryTracker factoryTracker = new BL.FactoryTracker();
+            factoryTracker.Start();
 
 
             Console.ReadLine();

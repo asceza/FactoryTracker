@@ -1,8 +1,7 @@
 ﻿using FactoryTracker.BL;
 using FactoryTracker.Enums;
-using FactoryTracker.Models;
-using FactoryTracker.Repositories;
-using FactoryTracker.Services;
+using FactoryTracker.DAL.Models;
+using FactoryTracker.DAL.Repositories;
 using FactoryTracker.UI;
 
 namespace FactoryTracker

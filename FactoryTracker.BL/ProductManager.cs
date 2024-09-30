@@ -24,20 +24,21 @@ namespace FactoryTracker.BL
             {
                 Number = number,
             };
-            _productRepository.AddProduct(product);
+
+            bool isProductAdded = _productRepository.AddProduct(product);
             
-            // сделать проверка try
-            return true;
-
-
+            // сделать проверка try???
+            return isProductAdded;
 
         }
 
 
-        public string[] GetAllProductNumbers()
+        public IEnumerable<string> GetAllProductNumbers()
         {
-            var arr2 = _productRepository.GetAllProductNumbers();
-            //var arr = arr2.Select.ToArray;
+            // логика внутри DAL - дай нам все
+            var allProducts = _productRepository.GetAllProducts();
+            var allProductsNumber = allProducts.Select(i => i.Number);
+            return allProductsNumber;
         }
 
 

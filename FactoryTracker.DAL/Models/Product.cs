@@ -1,4 +1,5 @@
-﻿namespace FactoryTracker.DAL.Models
+﻿using FactoryTracker.Enums;
+namespace FactoryTracker.DAL.Models
 {
     /// <summary>
     /// Изделие

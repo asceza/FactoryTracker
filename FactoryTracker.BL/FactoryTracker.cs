@@ -7,17 +7,28 @@ namespace FactoryTracker.BL
         public void Start()
         {
             UiManager uiManager = new UiManager();
-            string number = uiManager.RequestNewProducData();
+            int selectMenuItem = uiManager.GetSelectedMenuItem();
+
+            switch (selectMenuItem)
+            {
+                case 1:
+                    string number = uiManager.RequestNewProducData();
+                    ProductManager productManager = new ProductManager();
+                    bool isProductAdded = productManager.AddNewProduct(number);
+
+                    if (isProductAdded)
+                    {
+                        uiManager.ShowOneProduct(number);
+                    }
+
+                    var allProductsNumber = productManager.GetAllProductNumbers();
+                    uiManager.ShowAllProducts(allProductsNumber);
+                    break;
+            }
 
 
-            ProductManager productManager = new ProductManager();
-            productManager.AddNewProduct(number);
-
-            uiManager.ShowOneProduct(number);
 
 
-            var arr = productManager.GetAllProductNumbers();
-            uiManager.ShowAllProducts(arr);
         }
 
     }

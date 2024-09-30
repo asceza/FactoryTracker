@@ -29,7 +29,7 @@ namespace FactoryTracker.DAL.Repositories
             }
         }
 
-        
+
         public bool AddProduct(Product product)
         {
             try
@@ -46,23 +46,34 @@ namespace FactoryTracker.DAL.Repositories
             }
         }
 
-       // изменить поиск по number
+
+        // изменить поиск по number -> поменять Dictionary<string, Product>??
         public Product GetProduct(int productId)
         {
             try
             {
                 KeyValuePair<int, Product> foundItem = _products.First(item => item.Key == productId);
-                return foundItem.Value;
+                if (!foundItem.Equals(new KeyValuePair<int, Product>()))
+                {
+                    return foundItem.Value;
+                }
+                else
+                {
+                    throw new Exception($"В словаре _products нет значения с ключом {productId}");
+                    
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception($"В словаре _products нет значения с ключом {productId}");
+                throw new Exception($"Ошибка {ex.Message}");
             }
         }
 
-        public Product[] GetAllProductNumbers()
+
+        public Product[] GetAllProducts()
         {
-            throw new NotImplementedException();
+            var allProducts = _products.Values.ToArray();
+            return allProducts;
         }
     }
 }

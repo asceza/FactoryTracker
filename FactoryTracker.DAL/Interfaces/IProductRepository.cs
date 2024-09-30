@@ -7,6 +7,6 @@ namespace FactoryTracker.DAL.Interfaces
         // изменить result type
         bool AddProduct(Product product);
         Product GetProduct(int productId);
-        public Product[] GetAllProductNumbers();
+        public Product[] GetAllProducts();
     }
 }

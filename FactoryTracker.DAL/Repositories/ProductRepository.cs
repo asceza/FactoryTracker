@@ -47,20 +47,18 @@ namespace FactoryTracker.DAL.Repositories
         }
 
 
-        // изменить поиск по number -> поменять Dictionary<string, Product>??
-        public Product GetProduct(int productId)
+        public Product GetProduct(string productNumber)
         {
             try
             {
-                KeyValuePair<int, Product> foundItem = _products.First(item => item.Key == productId);
+                KeyValuePair<int, Product> foundItem = _products.First(item => item.Value.Number == productNumber);
                 if (!foundItem.Equals(new KeyValuePair<int, Product>()))
                 {
                     return foundItem.Value;
                 }
                 else
                 {
-                    throw new Exception($"В словаре _products нет значения с ключом {productId}");
-                    
+                    throw new Exception($"В словаре _products нет значения с номером {productNumber}");
                 }
             }
             catch (Exception ex)

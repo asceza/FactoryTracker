@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FactoryTracker.BL\FactoryTracker.BL.csproj" />
+    <ProjectReference Include="..\FactoryTracker.Core\FactoryTracker.Core.csproj" />
     <ProjectReference Include="..\FactoryTracker.DAL\FactoryTracker.DAL.csproj" />
     <ProjectReference Include="..\FactoryTracker.UI\FactoryTracker.UI.csproj" />
   </ItemGroup>

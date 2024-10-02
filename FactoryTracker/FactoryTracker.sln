@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryTracker.UI", "..\Fac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryTracker.DAL", "..\FactoryTracker.DAL\FactoryTracker.DAL.csproj", "{3623FCA7-9599-4869-999B-94077A643818}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryTracker.Core", "..\FactoryTracker.Core\FactoryTracker.Core.csproj", "{23D35695-A638-45A5-938E-A6F4599ABE06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3623FCA7-9599-4869-999B-94077A643818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3623FCA7-9599-4869-999B-94077A643818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3623FCA7-9599-4869-999B-94077A643818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D35695-A638-45A5-938E-A6F4599ABE06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D35695-A638-45A5-938E-A6F4599ABE06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D35695-A638-45A5-938E-A6F4599ABE06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D35695-A638-45A5-938E-A6F4599ABE06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

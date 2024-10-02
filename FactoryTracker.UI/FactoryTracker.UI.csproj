@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FactoryTracker.Core\FactoryTracker.Core.csproj" />
+  </ItemGroup>
+
 </Project>

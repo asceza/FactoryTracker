@@ -1,4 +1,6 @@
-﻿namespace FactoryTracker.UI
+﻿using FactoryTracker.Core.Enums;
+
+namespace FactoryTracker.UI
 {
     public class UiManager
     {
@@ -6,7 +8,7 @@
         /// Выбор пункта меню
         /// </summary>
         /// <returns></returns>
-        public int GetSelectedMenuItem()
+        public MenuItem GetSelectedMenuItem()
         {
             bool isParseOk = false;
             int selectMenuItem = 0;
@@ -21,7 +23,7 @@
                 string inputString = Console.ReadLine();
                 isParseOk = int.TryParse(inputString, out selectMenuItem);
             }
-            return selectMenuItem;
+            return (MenuItem)selectMenuItem;
         }
 
         /// <summary>

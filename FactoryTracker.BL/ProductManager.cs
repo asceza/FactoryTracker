@@ -41,6 +41,11 @@ namespace FactoryTracker.BL
             return allProductsNumber;
         }
 
-
+        public Product GetProductByNumber(string selectedProductNumber)
+        {
+            var allProducts = _productRepository.GetAllProducts();
+            Product product = allProducts.First(p => p.Number == selectedProductNumber);
+            return product;
+        }
     }
 }

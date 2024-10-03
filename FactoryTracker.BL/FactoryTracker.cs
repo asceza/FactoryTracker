@@ -1,6 +1,8 @@
 ﻿using FactoryTracker.Enums;
 using FactoryTracker.UI;
 using FactoryTracker.Core.Enums;
+using FactoryTracker.DAL.Models;
+
 
 namespace FactoryTracker.BL
 {
@@ -17,7 +19,6 @@ namespace FactoryTracker.BL
 
                 switch (menuItem)
                 {
-                    // добавление нового изделия
                     case MenuItem.AddNewProduct:
                         string selectedProductNumber = uiManager.RequestNewProducData();
                         bool isProductAdded = productManager.AddNewProduct(selectedProductNumber);
@@ -31,18 +32,17 @@ namespace FactoryTracker.BL
                         uiManager.ShowAllProducts(allProductsNumber);
                         break;
                     
-                    // ввод данных о статусе изделия
                     case MenuItem.UpdateProductStatus:
                         allProductsNumber = productManager.GetAllProductNumbers();
                         selectedProductNumber = uiManager.GetSelectedProductNumber(allProductsNumber);
 
                         // 1 получение продукта по его номеру?
-                        // не удается найти тип Product
-                        //Product product = productManager.GetProductByNumber(selectedProductNumber);
+                        Product product = productManager.GetProductByNumber(selectedProductNumber);
 
                         // 2 получение выбранного статуса по пункту меню?
                         // архитектура не предполагает возврат типа ProductStatus из слоя UI?
-                        //ProductStatus product = uiManager.GetStatusForProduct(selectedProductNumber);
+                        ProductStatus selectedProductStatus = uiManager.GetStatusForProduct(product.Number);
+                        //Console.WriteLine($"Вы выбрали {selectedProductStatus}");
 
 
                         // 3 добавление статуса у продукта

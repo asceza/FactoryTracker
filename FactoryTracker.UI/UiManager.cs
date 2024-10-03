@@ -1,4 +1,5 @@
 ﻿using FactoryTracker.Core.Enums;
+using FactoryTracker.Enums;
 
 namespace FactoryTracker.UI
 {
@@ -89,13 +90,29 @@ namespace FactoryTracker.UI
             return productNumbers.Skip(selectNumber - 1).First();
         }
 
-        // архитектура не предполагает возврат типа ProductStatus?
-        public int GetStatusForProduct(string number)
+
+        public ProductStatus GetStatusForProduct(string number)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Вы выбрали изделие № {number}");
-            return 0;
+            Console.WriteLine($"Ваберите новый статус для изделия № {number}...");
+
+            // приводим тип Array к типу ProductStatus[]
+            var allProductStatus = (ProductStatus[])Enum.GetValues(typeof(ProductStatus));
+            int s = 0;
+            foreach (var status in allProductStatus)
+            {
+                Console.WriteLine(++s + " - " + status);
+            }
             Console.ResetColor();
+
+            int selectStatus = 0;
+            string inputString = Console.ReadLine();
+            bool isParseOk = int.TryParse(inputString, out selectStatus);
+            // добавить проверку корректного ввода
+            // добавить проверку выхода за диапазон значений
+
+            return allProductStatus[selectStatus - 1];
+
         }
 
 

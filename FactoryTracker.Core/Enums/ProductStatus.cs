@@ -5,7 +5,7 @@
     /// </summary>
     public enum ProductStatus : byte
     {
-        Unknown,
+        Unknown = 1,
 
         /// <summary>
         /// Сборка комплектующих

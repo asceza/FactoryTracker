@@ -1,4 +1,4 @@
-﻿namespace FactoryTracker.Enums
+﻿namespace FactoryTracker.Core.Enums
 {
     /// <summary>
     /// Статус изделия

@@ -1,5 +1,4 @@
-﻿using FactoryTracker.Enums;
-using FactoryTracker.UI;
+﻿using FactoryTracker.UI;
 using FactoryTracker.Core.Enums;
 using FactoryTracker.DAL.Models;
 
@@ -20,42 +19,48 @@ namespace FactoryTracker.BL
                 switch (menuItem)
                 {
                     case MenuItem.AddNewProduct:
-                        string selectedProductNumber = uiManager.RequestNewProducData();
-                        bool isProductAdded = productManager.AddNewProduct(selectedProductNumber);
+                        string newProductNumber = uiManager.RequestNewProducNumber();
+                        bool isProductAdded = productManager.AddNewProduct(newProductNumber);
 
                         if (isProductAdded)
                         {
-                            uiManager.ShowOneAddedProduct(selectedProductNumber);
+                            uiManager.ShowOneAddedProductNumber(newProductNumber);
                         }
 
+
                         var allProductsNumber = productManager.GetAllProductNumbers();
-                        uiManager.ShowAllProducts(allProductsNumber);
+                        uiManager.ShowAllProductsNumber(allProductsNumber);
                         break;
+
                     
                     case MenuItem.UpdateProductStatus:
                         allProductsNumber = productManager.GetAllProductNumbers();
-                        selectedProductNumber = uiManager.GetSelectedProductNumber(allProductsNumber);
+                        string selectedProductNumber = uiManager.GetSelectedProductNumber(allProductsNumber);
 
-                        // 1 получение продукта по его номеру?
-                        Product product = productManager.GetProductByNumber(selectedProductNumber);
+                        Product selectedProduct = productManager.GetProductByNumber(selectedProductNumber);
 
-                        // 2 получение выбранного статуса по пункту меню?
-                        // архитектура не предполагает возврат типа ProductStatus из слоя UI?
-                        ProductStatus selectedProductStatus = uiManager.GetStatusForProduct(product.Number);
-                        //Console.WriteLine($"Вы выбрали {selectedProductStatus}");
+                        ProductStatus selectedProductStatus = uiManager.GetStatusForProduct(selectedProduct.Number);
 
+                        bool isStatusToProductAdded = productManager.SetStatusForProduct(selectedProduct, selectedProductStatus);
 
-                        // 3 добавление статуса у продукта
+                        if (isStatusToProductAdded)
+                        {
+                            uiManager.ShowProductWithNumberAndStatus(selectedProduct.Number, selectedProduct.ProductStatus);
+                        }
 
+                        break;
 
+                    case MenuItem.ShowProductsStatus:
+                        // Product selectedProductByNumber = productManager.GetProductByNumber("111");
+
+                        Product[] allProducts = productManager.GetAllProducts();
+                        foreach (Product product in allProducts)
+                        {
+                            uiManager.ShowProductWithNumberAndStatus(product.Number, product.ProductStatus);
+                        }
                         break;
                 } 
             }
-
-
-
-
         }
-
     }
 }

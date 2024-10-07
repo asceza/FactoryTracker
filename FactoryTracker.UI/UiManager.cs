@@ -1,12 +1,11 @@
 ﻿using FactoryTracker.Core.Enums;
-using FactoryTracker.Enums;
 
 namespace FactoryTracker.UI
 {
     public class UiManager
     {
         /// <summary>
-        /// Выбор пункта меню
+        /// Выбрать пункт меню
         /// </summary>
         /// <returns></returns>
         public MenuItem GetSelectedMenuItem()
@@ -31,7 +30,7 @@ namespace FactoryTracker.UI
         /// Запрос на добавление нового изделия
         /// </summary>
         /// <returns></returns>
-        public string RequestNewProducData()
+        public string RequestNewProducNumber()
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Введите номер для нового продукта...");
@@ -41,10 +40,10 @@ namespace FactoryTracker.UI
         }
 
         /// <summary>
-        /// Показ одного добавленного изделия
+        /// Показать номер одного добавленного изделия
         /// </summary>
         /// <param name="number"></param>
-        public void ShowOneAddedProduct(string number)
+        public void ShowOneAddedProductNumber(string number)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Добавлено изделие № {number}");
@@ -52,10 +51,10 @@ namespace FactoryTracker.UI
         }
 
         /// <summary>
-        /// Показ всех изделий в базе
+        /// Показать номера всех изделий в базе
         /// </summary>
         /// <param name="productNumbers"></param>
-        public void ShowAllProducts(IEnumerable<string> productNumbers)
+        public void ShowAllProductsNumber(IEnumerable<string> productNumbers)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Созданы следующие изделия:");
@@ -67,7 +66,7 @@ namespace FactoryTracker.UI
         }
 
         /// <summary>
-        /// Получение номера выбранного продукта по его пункту на экране
+        /// Получить номера выбранного продукта по его пункту на экране
         /// </summary>
         /// <param name="productNumbers"></param>
         /// <returns></returns>
@@ -90,11 +89,15 @@ namespace FactoryTracker.UI
             return productNumbers.Skip(selectNumber - 1).First();
         }
 
-
+        /// <summary>
+        /// Получить статус из списка всех статусов
+        /// </summary>
+        /// <param name="number">Номер изделия</param>
+        /// <returns></returns>
         public ProductStatus GetStatusForProduct(string number)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Ваберите новый статус для изделия № {number}...");
+            Console.WriteLine($"Выберите новый статус для изделия № {number}...");
 
             // приводим тип Array к типу ProductStatus[]
             var allProductStatus = (ProductStatus[])Enum.GetValues(typeof(ProductStatus));
@@ -115,6 +118,16 @@ namespace FactoryTracker.UI
 
         }
 
+        /// <summary>
+        /// Показать номер и статус изделия
+        /// </summary>
+        /// <param name="number">Номер изделия</param>
+        /// <param name="productStatus">Статус</param>
+        /// <exception cref="NotImplementedException"></exception>
+        public void ShowProductWithNumberAndStatus(string number, ProductStatus productStatus)
+        {
+            Console.WriteLine($"У изделия №{number} текущий статус - {productStatus}");
+        }
 
     }
 }

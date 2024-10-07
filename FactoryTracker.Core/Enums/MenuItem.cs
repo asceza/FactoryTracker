@@ -10,6 +10,6 @@ namespace FactoryTracker.Core.Enums
     {
         AddNewProduct = 1,
         UpdateProductStatus,
-        ShowProductStatus
+        ShowProductsStatus
     }
 }

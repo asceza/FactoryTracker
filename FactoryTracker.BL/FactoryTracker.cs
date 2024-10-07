@@ -47,7 +47,6 @@ namespace FactoryTracker.BL
                         {
                             uiManager.ShowProductWithNumberAndStatus(selectedProduct.Number, selectedProduct.ProductStatus);
                         }
-
                         break;
 
                     case MenuItem.ShowProductsStatus:

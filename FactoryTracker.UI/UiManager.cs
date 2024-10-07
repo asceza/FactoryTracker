@@ -18,7 +18,7 @@ namespace FactoryTracker.UI
                 Console.WriteLine("Что вы хотите сделать? Введите номер пункта...");
                 Console.WriteLine("\t1 [Добавить новое изделие]\n" +
                                   "\t2 [Ввести данные о статусе изделия]\n" +
-                                  "\t3 [Получить данные о статусе изделия]");
+                                  "\t3 [Получить данные о статусе всех изделий]");
                 Console.ResetColor();
                 string inputString = Console.ReadLine();
                 isParseOk = int.TryParse(inputString, out selectMenuItem);

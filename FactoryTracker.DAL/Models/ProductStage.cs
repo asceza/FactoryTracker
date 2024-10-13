@@ -1,5 +1,5 @@
 ﻿using FactoryTracker.Core.Enums;
-using FactoryTracker.Enums;
+using FactoryTracker.DAL.Enums;
 
 namespace FactoryTracker.DAL.Models
 {

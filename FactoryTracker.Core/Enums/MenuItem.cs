@@ -8,7 +8,8 @@ namespace FactoryTracker.Core.Enums
 {
     public enum MenuItem
     {
-        AddNewProduct = 1,
+        None = 0,
+        AddNewProduct,
         UpdateProductStatus,
         ShowProductsStatus
     }

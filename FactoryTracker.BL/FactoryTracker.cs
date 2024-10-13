@@ -58,6 +58,9 @@ namespace FactoryTracker.BL
                             uiManager.ShowProductWithNumberAndStatus(product.Number, product.ProductStatus);
                         }
                         break;
+                    default:
+                        //Console.WriteLine("???");
+                        break;
                 } 
             }
         }

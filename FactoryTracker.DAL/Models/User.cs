@@ -1,4 +1,4 @@
-﻿using FactoryTracker.Enums;
+﻿using FactoryTracker.DAL.Enums;
 
 namespace FactoryTracker.DAL.Models
 {

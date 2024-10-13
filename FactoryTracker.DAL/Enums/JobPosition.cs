@@ -1,11 +1,11 @@
-﻿namespace FactoryTracker.Enums
+﻿namespace FactoryTracker.DAL.Enums
 {
     /// <summary>
     /// Должность
     /// </summary>
     public enum JobPosition : byte
     {
-        None,
+        None = 0,
         FitterCategory2,
         FitterCategory3,
         FitterCategory4,

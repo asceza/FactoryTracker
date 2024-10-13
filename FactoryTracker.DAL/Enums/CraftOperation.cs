@@ -1,10 +1,11 @@
-﻿namespace FactoryTracker.Enums
+﻿namespace FactoryTracker.DAL.Enums
 {
     /// <summary>
     /// Производственная операция
     /// </summary>
     public enum CraftOperation : byte
     {
+        None = 0,
         /// <summary>
         /// Приемка комплектующих
         /// </summary>

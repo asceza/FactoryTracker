@@ -51,10 +51,10 @@ namespace FactoryTracker.DAL.Repositories
         {
             try
             {
-                KeyValuePair<int, Product> foundItem = _products.FirstOrDefault(item => item.Value.Number == productNumber);
-                if (foundItem.Value != null)
+                var foundProduct = _products.FirstOrDefault(item => item.Value.Number == productNumber).Value;
+                if (foundProduct != null)
                 {
-                    return foundItem.Value;
+                    return foundProduct;
                 }
                 else
                 {

@@ -24,7 +24,7 @@ namespace FactoryTracker.BL
             var product = new Product()
             {
                 Number = number,
-                ProductStatus = ProductStatus.Unknown,
+                ProductStatus = ProductStatus.None,
             };
 
             bool isProductAdded = _productRepository.AddProduct(product);

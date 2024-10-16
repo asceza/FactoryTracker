@@ -1,5 +1,4 @@
 ﻿using FactoryTracker.Core.Enums;
-
 namespace FactoryTracker.UI
 {
     public class UiManager
@@ -15,13 +14,23 @@ namespace FactoryTracker.UI
             while (!isParseOk)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Что вы хотите сделать? Введите номер пункта...");
+                Console.WriteLine("Что вы хотите сделать? Введите номер пункта от 1 до 3...");
                 Console.WriteLine("\t1 [Добавить новое изделие]\n" +
                                   "\t2 [Ввести данные о статусе изделия]\n" +
                                   "\t3 [Получить данные о статусе всех изделий]");
                 Console.ResetColor();
                 string inputString = Console.ReadLine();
                 isParseOk = int.TryParse(inputString, out selectMenuItem);
+
+                if (selectMenuItem > 3 || selectMenuItem < 0)
+                {
+                    isParseOk = false;
+                }
+
+                if (!isParseOk)
+                {
+                    ShowMessage("Не верный ввод, попробуйте еще раз (from ui)", ConsoleColor.Red);
+                }
             }
             return (MenuItem)selectMenuItem;
         }
@@ -33,7 +42,7 @@ namespace FactoryTracker.UI
         public string RequestNewProducNumber()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Введите номер для нового продукта...");
+            Console.WriteLine("\tВведите номер для нового продукта в формате №№№/YY...");
             Console.ResetColor();
             string number = Console.ReadLine();
             return number;
@@ -57,7 +66,7 @@ namespace FactoryTracker.UI
         public void ShowAllProductsNumber(IEnumerable<string> productNumbers)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Созданы следующие изделия:");
+            Console.WriteLine("Список всех созданных изделий:");
             foreach (var number in productNumbers)
             {
                 Console.WriteLine(number);
@@ -127,6 +136,13 @@ namespace FactoryTracker.UI
         public void ShowProductWithNumberAndStatus(string number, ProductStatus productStatus)
         {
             Console.WriteLine($"У изделия №{number} текущий статус - {productStatus}");
+        }
+
+        public void ShowMessage(string message, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
+            Console.ResetColor();
         }
 
     }

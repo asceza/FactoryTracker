@@ -20,13 +20,16 @@ namespace FactoryTracker.BL
                 {
                     case MenuItem.AddNewProduct:
                         string newProductNumber = uiManager.RequestNewProducNumber();
-                        bool isProductAdded = productManager.AddNewProduct(newProductNumber);
+                        var productAddedResult = productManager.AddNewProduct(newProductNumber);
 
-                        if (isProductAdded)
+                        if (productAddedResult.IsSuccess)
                         {
                             uiManager.ShowOneAddedProductNumber(newProductNumber);
                         }
-
+                        else
+                        {
+                            uiManager.ShowMessage(productAddedResult.Error, ConsoleColor.Red);
+                        }
 
                         var allProductsNumber = productManager.GetAllProductNumbers();
                         uiManager.ShowAllProductsNumber(allProductsNumber);
@@ -37,15 +40,16 @@ namespace FactoryTracker.BL
                         allProductsNumber = productManager.GetAllProductNumbers();
                         string selectedProductNumber = uiManager.GetSelectedProductNumber(allProductsNumber);
 
-                        Product selectedProduct = productManager.GetProductByNumber(selectedProductNumber);
+                        var selectedProductResult = productManager.GetProductByNumber(selectedProductNumber);
 
-                        ProductStatus selectedProductStatus = uiManager.GetStatusForProduct(selectedProduct.Number);
 
-                        bool isStatusToProductAdded = productManager.SetStatusForProduct(selectedProduct, selectedProductStatus);
+                        ProductStatus selectedProductStatus = uiManager.GetStatusForProduct(selectedProductResult.Value.Number);
+
+                        bool isStatusToProductAdded = productManager.SetStatusForProduct(selectedProductResult.Value, selectedProductStatus);
 
                         if (isStatusToProductAdded)
                         {
-                            uiManager.ShowProductWithNumberAndStatus(selectedProduct.Number, selectedProduct.ProductStatus);
+                            uiManager.ShowProductWithNumberAndStatus(selectedProductResult.Value.Number, selectedProductResult.Value.ProductStatus);
                         }
                         break;
 
@@ -59,7 +63,7 @@ namespace FactoryTracker.BL
                         }
                         break;
                     default:
-                        //Console.WriteLine("???");
+                        uiManager.ShowMessage("Не верный ввод, попробуйте еще раз (from bl)", ConsoleColor.Red);
                         break;
                 } 
             }

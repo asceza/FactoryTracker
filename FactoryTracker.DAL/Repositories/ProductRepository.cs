@@ -1,10 +1,12 @@
 ﻿using FactoryTracker.DAL.Interfaces;
 using FactoryTracker.DAL.Models;
+using FactoryTracker.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.Design;
 
 namespace FactoryTracker.DAL.Repositories
 {
@@ -30,40 +32,76 @@ namespace FactoryTracker.DAL.Repositories
         }
 
 
-        public bool AddProduct(Product product)
+        //public bool AddProduct(Product product)
+        //{
+        //    try
+        //    {
+        //        int id = IncrementProductId();
+        //        product.ID = id;
+        //        _products.Add(id, product);
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        return false;
+        //    }
+        //}
+
+        public Result<bool> AddProduct(Product product)
         {
-            try
+
+            int id = IncrementProductId();
+            product.ID = id;
+            if (_products.TryAdd(id, product))
             {
-                int id = IncrementProductId();
-                product.ID = id;
-                _products.Add(id, product);
-                return true;
+                return new Result<bool>(true);
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.Message);
-                return false;
+                return new Result<bool>("Продукт не был добавлен");
             }
         }
 
 
-        public Product GetProduct(string productNumber)
+        //public Product GetProduct(string productNumber)
+        //{
+        //    try
+        //    {
+        //        var foundProduct = _products.FirstOrDefault(item => item.Value.Number == productNumber).Value;
+        //        if (foundProduct != null)
+        //        {
+        //            return foundProduct;
+        //        }
+        //        else
+        //        {
+        //            throw new Exception($"В словаре _products нет значения с номером {productNumber}");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception($"Ошибка {ex.Message}");
+        //    }
+        //}
+
+        public Result<Product> GetProduct(string productNumber)
         {
             try
             {
                 var foundProduct = _products.FirstOrDefault(item => item.Value.Number == productNumber).Value;
                 if (foundProduct != null)
                 {
-                    return foundProduct;
+                    return new Result<Product>(foundProduct);
                 }
                 else
                 {
-                    throw new Exception($"В словаре _products нет значения с номером {productNumber}");
+                    return new Result<Product>($"В словаре _products нет значения с номером {productNumber}");
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Ошибка {ex.Message}");
+                //throw new Exception($"Ошибка {ex.Message}");
+                return new Result<Product>($"Ошибка {ex.Message}");
             }
         }
 

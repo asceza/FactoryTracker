@@ -2,6 +2,7 @@
 using FactoryTracker.DAL.Models;
 using FactoryTracker.DAL.Repositories;
 using FactoryTracker.Core.Enums;
+using FactoryTracker.Core;
 using FactoryTracker.UI;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace FactoryTracker.BL
             _productRepository = new ProductRepository();
         }
 
-        public bool AddNewProduct(string number)
+        public Result<bool> AddNewProduct(string number)
         {
             var product = new Product()
             {
@@ -27,11 +28,9 @@ namespace FactoryTracker.BL
                 ProductStatus = ProductStatus.None,
             };
 
-            bool isProductAdded = _productRepository.AddProduct(product);
+            var productAddedResult = _productRepository.AddProduct(product);
             
-            // сделать проверка try???
-            return isProductAdded;
-
+            return productAddedResult;
         }
 
 
@@ -52,10 +51,10 @@ namespace FactoryTracker.BL
         //}
 
 
-        public Product GetProductByNumber(string selectedProductNumber)
+        public Result<Product> GetProductByNumber(string selectedProductNumber)
         {
-            var product = _productRepository.GetProduct(selectedProductNumber);
-            return product;
+            var productResult = _productRepository.GetProduct(selectedProductNumber);
+            return productResult;
         }
 
 
